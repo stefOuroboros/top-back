@@ -1,5 +1,8 @@
 package dev.top.entities;
 
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +16,12 @@ public class Collegue {
 	int id;
 
 	String pseudo;
-	String[] imageUrl;
+	@ElementCollection
+	List<String> imageUrl;
 	int score;
 
 	//Construct
-	public Collegue(String pseudo, String[] imageUrl, int score) {
+	public Collegue(String pseudo, List<String> imageUrl, int score) {
 		this.pseudo = pseudo;
 		this.imageUrl = imageUrl;
 		this.score = score;
@@ -30,12 +34,12 @@ public class Collegue {
 	//Getters
 	public int getId() { return id; }
 	public String getPseudo() { return pseudo; }
-	public String[] getImageUrl() { return imageUrl; }
+	public List<String> getImageUrl() { return imageUrl; }
 	public int getScore() { return score; }
 	//Setters
 	public void setId(int id) { this.id = id; }
 	public void setPseudo(String pseudo) { this.pseudo = pseudo; }
-	public void setImageUrl(String[] imageUrl) { this.imageUrl = imageUrl; }
+	public void setImageUrl(List<String> imageUrl) { this.imageUrl = imageUrl; }
 	public void setScore(int score) { this.score = score; }
 	
 }

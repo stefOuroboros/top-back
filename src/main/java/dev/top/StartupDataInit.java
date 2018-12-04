@@ -1,5 +1,8 @@
 package dev.top;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -27,9 +30,16 @@ public class StartupDataInit {
             this.versionRepo.save(new Version("v4"));
         }
         
-        String imgUrlT[] = {"./src/main/resources/images/tomme.jpg", "./src/main/resources/images/giphy.gif"};
-        String imgUrlB[] = {"./src/main/resources/images/BobRazowsky.jpg", "./src/main/resources/images/bobRazowsky2.jpg"};
-        String imgUrlS[] = {"./src/main/resources/images/sully.jpg", "./src/main/resources/images/sullYoung.jpg"};
+        List<String> imgUrlT = new ArrayList<>();
+        List<String> imgUrlB = new ArrayList<>();
+        List<String> imgUrlS = new ArrayList<>();
+        
+        imgUrlT.add("./src/main/resources/images/tomme.jpg");
+        imgUrlT.add("./src/main/resources/images/giphy.gif");
+        imgUrlB.add("./src/main/resources/images/BobRazowsky.jpg");
+        imgUrlB.add("./src/main/resources/images/bobRazowsky2.jpg");
+        imgUrlS.add("./src/main/resources/images/sully.jpg");
+        imgUrlS.add("./src/main/resources/images/sullYoung.jpg");
         
         if(this.collegueRepo.count()<=0) {
         	this.collegueRepo.save(new Collegue("thomas", imgUrlT, 0));
