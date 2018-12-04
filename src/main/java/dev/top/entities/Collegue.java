@@ -23,6 +23,10 @@ public class Collegue {
 		this.score = score;
 	}
 	
+	public Collegue() {
+		super();
+	}
+	
 	//Getters
 	public int getId() { return id; }
 	public String getPseudo() { return pseudo; }
