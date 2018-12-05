@@ -29,6 +29,13 @@ public class CollegueController {
 	public List<Collegue> findAll() {
 		return this.collegueRepo.findAll();
 	}
+	
+	@GetMapping("/{pseudo}")
+	public Collegue findOne(@PathVariable String pseudo) {
+		Collegue collegue = collegueRepo.findByPseudo(pseudo);
+		return collegue;
+	}
+	
 
 	@PatchMapping("/{pseudo}")
 	public Collegue actionAvis(@PathVariable String pseudo, @RequestBody ActionButton action) {

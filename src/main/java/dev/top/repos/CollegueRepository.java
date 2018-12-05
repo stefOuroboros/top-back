@@ -6,4 +6,5 @@ import dev.top.entities.Collegue;
 
 public interface CollegueRepository extends JpaRepository<Collegue, Integer> {
 	Collegue findByPseudo(String pseudo);
+	Collegue findById(int id);
 }
