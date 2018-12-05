@@ -40,10 +40,11 @@ public class StartupDataInit {
         imgUrlB.add("https://tse3.mm.bing.net/th?id=OIP.YLbsad5708TiCrOsxWaopwHaEA&pid=Api");
         imgUrlS.add("https://tse3.mm.bing.net/th?id=OIP.7bMB1AMVL6FXDbAratJJigHaEA&pid=Api");
         imgUrlS.add("https://images.ecosia.org/c32pApvhII2IZtLeMQCom73aEBw=/0x390/smart/http%3A%2F%2Fmedia.fan2.fr%2Farticle-1320833-ajust_930-f56093%2Fsulli-sera-present-sur-les-bancs-de-la-fac.jpg");
-       
+        if(this.collegueRepo.count() <= 0) {
         	this.collegueRepo.save(new Collegue("thomas", imgUrlT, 0));
         	this.collegueRepo.save(new Collegue("bob", imgUrlB, 0));
         	this.collegueRepo.save(new Collegue("sullyvan", imgUrlS, 0));
+        }
 
     }
 }
