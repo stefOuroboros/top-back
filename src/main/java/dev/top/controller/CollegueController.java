@@ -1,5 +1,6 @@
 package dev.top.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import dev.top.entities.ActionButton;
 import dev.top.entities.Avis;
 import dev.top.entities.Collegue;
+import dev.top.entities.CollegueForm;
 import dev.top.repos.CollegueRepository;
 
 @CrossOrigin
@@ -47,5 +50,16 @@ public class CollegueController {
 		}
 		collegueRepo.save(collegue);
 		return collegue;
+	}
+	
+	@GetMapping("/matricules")
+	public List<String> findMatriculeList() {
+		RestTemplate rt = new RestTemplate();
+		CollegueForm[] tabColleguesForm= rt.getForObject("http://collegues-api.cleverapps.io/collegues", CollegueForm[].class);
+		List<String> matricules = new ArrayList<String>();
+		for (CollegueForm matricule: tabColleguesForm) {
+			matricules.add(matricule.getMatricule());
+		}
+		return matricules;
 	}
 }

@@ -25,7 +25,7 @@ public class Collegue {
 	String email;
 	String adresse;
 
-	//Construct
+	//Construct	
 	public Collegue(String pseudo, List<String> imageUrl, int score) {
 		this.pseudo = pseudo;
 		this.imageUrl = imageUrl;
