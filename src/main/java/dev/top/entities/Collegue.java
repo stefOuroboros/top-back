@@ -32,6 +32,13 @@ public class Collegue {
 		this.score = score;
 	}
 	
+	public Collegue(String nom, String prenom, String email, String adresse) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+	}
+	
 	public Collegue() {
 		super();
 	}
