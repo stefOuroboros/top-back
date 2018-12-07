@@ -1,10 +1,11 @@
 package dev.top.entities;
 
-import java.util.List;
-
 public class CollegueForm {
+	
 	String matricule;
 	String pseudo;
+	String imageUrl;
+	
 	public String getMatricule() {
 		return matricule;
 	}
@@ -21,19 +22,18 @@ public class CollegueForm {
 		this.pseudo = pseudo;
 	}
 
-	public List<String> getImageUrl() {
+	public String getImageUrl() {
 		return imageUrl;
 	}
 
-	public void setImageUrl(List<String> imageUrl) {
+	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
 
-	List<String> imageUrl;
 	
 	public CollegueForm() {}
 	
-	public CollegueForm(String matricule, String pseudo, List<String> imageUrl) {
+	public CollegueForm(String matricule, String pseudo, String imageUrl) {
 		this.matricule = matricule;
 		this.pseudo = pseudo;
 		this.imageUrl = imageUrl;
